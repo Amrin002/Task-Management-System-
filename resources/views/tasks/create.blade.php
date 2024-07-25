@@ -1,67 +1,70 @@
+
 @extends('layouts.app')
 
 <style>
-    /* Container */
+    /* Container styles */
 .container {
     max-width: 600px;
-    margin: auto;
-    padding: 20px;
-    background-color: #f8f9fa;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
 }
 
-/* Title */
-.container h1 {
-    text-align: center;
+.container:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Heading styles */
+h1 {
+    font-size: 100rem;
     margin-bottom: 20px;
-    font-size: 2rem;
-    color: #343a40;
+    text-align: center;
+    color: #333;
+    font: bold;
 }
 
-/* Form */
-form {
-    display: flex;
-    flex-direction: column;
-}
-
-/* Form Labels */
+/* Form control styles */
 .form-label {
     font-weight: bold;
-    color: #495057;
+    color: #555;
+    display: block;
+    margin-bottom: 5px;
 }
 
-/* Form Controls */
 .form-control {
-    border-radius: 4px;
-    border: 1px solid #ced4da;
-    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    padding: 12px 15px;
     font-size: 1rem;
+    transition: all 0.3s ease-in-out;
 }
 
-/* Form Controls Focus */
 .form-control:focus {
-    border-color: #80bdff;
-    outline: 0;
-    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.25);
+    outline: none;
 }
 
-/* Textarea */
-textarea.form-control {
-    resize: vertical;
-    min-height: 100px;
+/* Margin bottom for form group */
+.mb-3 {
+    margin-bottom: 1.5rem;
 }
 
-/* Submit Button */
+/* Button styles */
 .btn-primary {
     background-color: #007bff;
     border-color: #007bff;
-    padding: 10px 20px;
-    font-size: 1rem;
-    border-radius: 4px;
+    padding: 12px 20px;
+    font-size: 1.1rem;
+    border-radius: 8px;
     cursor: pointer;
-    margin-top: 20px;
     transition: background-color 0.3s, border-color 0.3s;
+    display: block;
+    width: 100%;
+    text-align: center;
 }
 
 .btn-primary:hover {
@@ -69,26 +72,32 @@ textarea.form-control {
     border-color: #004085;
 }
 
-/* Centered Submit Button */
-form .text-center {
-    text-align: center;
+/* File input styles */
+.form-control[type="file"] {
+    padding: 8px;
 }
 
-/* File Input */
-input[type="file"] {
-    padding: 3px;
+#status{
+    width: 120;
+    padding: 20px
 }
 
-/* Media Query for Mobile Responsiveness */
-@media (max-width: 768px) {
-    .container {
-        padding: 15px;
+
+/* Add some subtle animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
     }
-    .btn-primary {
-        width: 100%;
+    to {
+        opacity: 1;
     }
+}
+
+.container {
+    animation: fadeIn 1s ease-in-out;
 }
 </style>
+
 @section('content')
 <div class="container">
     <h1>Create Task</h1>
@@ -119,5 +128,8 @@ input[type="file"] {
         </div>
         <button type="submit" class="btn btn-primary">Save</button>
     </form>
-</div>
+</div>file{
+    padding: 20;
+
+}
 @endsection
